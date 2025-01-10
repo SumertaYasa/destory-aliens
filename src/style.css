@@ -1,0 +1,19 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body, html {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #11071f;
+}
+
+canvas {
+  z-index: 1; /* Pastikan canvas berada di atas */
+}
+
+#game-container {
+  position: relative;
+}
