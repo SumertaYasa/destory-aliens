@@ -78,10 +78,12 @@ function create() {
     enemies.add(enemy);
   }
 
+  // Collider antara peluru pemain dan musuh
   this.physics.add.collider(player.bullets, enemies, (bullet, enemy) => {
     bullet.setActive(false);
     bullet.setVisible(false);
 
+    // Efek visual ketika musuh terkena peluru
     enemy.setTint(0xff0000);
     enemy.setAlpha(0.5);
 
@@ -99,11 +101,13 @@ function create() {
     });
   });
 
+  // Collider antara karakter dan musuh
   this.physics.add.collider(player, enemies, (player, enemy) => {
     player.takeDamage(1);
     enemy.destroy();
   });
-  
+
+  // Collider antara peluru musuh dan karakter
   enemies.children.iterate((enemy) => {
     this.physics.add.collider(player, enemy.bullets, (player, bullet) => {
       player.takeDamage(1);
@@ -111,6 +115,7 @@ function create() {
     });
   });
 
+  // Virtual Joystick untuk perangkat mobile
   if (!this.sys.game.device.os.desktop) {
     joystick = this.rexVirtualJoystick.add(this, {
       x: 70,
@@ -138,6 +143,7 @@ function create() {
       player.shoot();
     });
   } else {
+    // Kontrol keyboard untuk perangkat desktop
     this.input.keyboard.on('keydown', (event) => {
       if (event.code === 'Space') {
         player.shoot();
