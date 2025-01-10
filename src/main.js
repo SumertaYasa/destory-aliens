@@ -42,11 +42,11 @@ const config = {
 };
 
 function preload() {
-  this.load.image('background', '../public/assets/background.png');
-  this.load.image('ship', '../public/assets/mainShip.png');
-  this.load.image('bullet', '../public/assets/bullet.png');
-  this.load.image('bulletAlien', '../public/assets/bulletAlien.png');
-  this.load.image('enemy', '../public/assets/alien.png');
+  this.load.image('background', '/assets/background.png');
+  this.load.image('ship', '/assets/mainShip.png');
+  this.load.image('bullet', '/assets/bullet.png');
+  this.load.image('bulletAlien', '/assets/bulletAlien.png');
+  this.load.image('enemy', '/assets/alien.png');
 }
 
 function create() {
